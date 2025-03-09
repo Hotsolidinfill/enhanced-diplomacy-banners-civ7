@@ -13,6 +13,8 @@ import DiploRibbonData, {
 RibbonYieldType.TotalGold = "totalGold";
 RibbonYieldType.TotalDiplomacy = "totalDiplomacy";
 RibbonYieldType.TotalPopulation = "totalPopulation";
+// add MilitaryPower by Hotsolidinfill
+RibbonYieldType.MilitaryPower = "MilitaryPower";
 
 engine.whenReady.then(() => {
     try {
@@ -54,6 +56,15 @@ engine.whenReady.then(() => {
                 // Helper function to format yield value
                 const formatYieldValue = (value) => 
                     (value >= 0 ? "+" : "") + value.toFixed(1);
+                // add MilitaryPower by Hotsolidinfill
+                let strengthSum = 0;
+                for (let i = 0; i < playerLibrary.Units.getUnits().length; i++) {
+                    let unit = playerLibrary.Units.getUnits()[i];
+                    if (!unit.Combat.canAttack) 
+                        continue;
+                    let strength = Math.max(unit.Combat.getMeleeStrength(false), unit.Combat.rangedStrength);
+                    strengthSum += Math.round(4**(strength / 17));
+                    }    
                 
                 const yieldData = [
                     {
@@ -135,6 +146,16 @@ engine.whenReady.then(() => {
                         details: "",
                         img: this.getImg('YIELD_DIPLOMACY', isLocal),
                         rawValue: totalDiplomacy,
+                        warningThreshold: Infinity
+                    },
+                    // add MilitaryPower by Hotsolidinfill
+                    {
+                        type: RibbonYieldType.MilitaryPower,
+                        label: Locale.compose("LOC_YIELD_MILITARY_POWER"),
+                        value: strengthSum.toString(),
+                        details: "",
+                        img: '<img src="icons/military_power.png">',
+                        rawValue: strengthSum,
                         warningThreshold: Infinity
                     }
                 ];

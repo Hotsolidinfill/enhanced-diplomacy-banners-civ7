@@ -231,6 +231,7 @@ export class DiploRibbonEnhancer {
             }
 
             /* Hide extended yields by default */
+            /* always opened by Hotsoild infill
             .diplo-ribbon__yields > *:nth-child(6),
             .diplo-ribbon__yields > *:nth-child(7),
             .diplo-ribbon__yields > *:nth-child(8),
@@ -246,6 +247,7 @@ export class DiploRibbonEnhancer {
                 transform: translateY(-20px) !important;
                 transition-property: none !important;
             }
+            */
 
             /* Show extended yields on hover with animation */
             .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(6),
@@ -282,7 +284,11 @@ export class DiploRibbonEnhancer {
             }
 
             /* Add separator on hover after the 5th yield element */
-            .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(6) {
+            /* always opened by Hotsoild infill */
+            /*
+            .diplo-ribbon-outer:hover
+            */
+            .diplo-ribbon__yields > *:nth-child(6) {
                 border-top: 0.0555555556rem solid #8C7F66 !important;
                 margin-top: 0.5rem !important;
                 padding-top: 0.5rem !important;
