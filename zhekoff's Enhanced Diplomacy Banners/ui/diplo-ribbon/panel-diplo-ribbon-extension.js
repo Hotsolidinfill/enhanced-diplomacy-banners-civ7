@@ -80,7 +80,9 @@ export class DiploRibbonEnhancer {
                     .diplo-ribbon .diplo-ribbon__yields > *:nth-child(6),
                     .diplo-ribbon .diplo-ribbon__yields > *:nth-child(7),
                     .diplo-ribbon .diplo-ribbon__yields > *:nth-child(8),
-                    .diplo-ribbon .diplo-ribbon__yields > *:nth-child(9) {
+                    .diplo-ribbon .diplo-ribbon__yields > *:nth-child(9),
+                    /* add MilitaryPower by Hotsolidinfill */ 
+                    .diplo-ribbon .diplo-ribbon__yields > *:nth-child(10) {
                         display: block !important;
                         opacity: 0 !important;
                         max-height: 0 !important;
@@ -97,7 +99,9 @@ export class DiploRibbonEnhancer {
                     .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(6),
                     .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(7),
                     .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(8),
-                    .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(9) {
+                    .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(9),
+                    /* add MilitaryPower by Hotsolidinfill */ 
+                    .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(10) {
                         display: flex !important;
                         opacity: 1 !important;
                         max-height: 2rem !important;
@@ -125,6 +129,11 @@ export class DiploRibbonEnhancer {
                     
                     .diplo-ribbon .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(9) {
                         transition-delay: 0.1s !important;
+                    }
+
+                    /* add MilitaryPower by Hotsolidinfill */ 
+                    .diplo-ribbon-outer:hover .diplo-ribbon__yields > *:nth-child(10) {
+                        transition-delay: 0.15s !important;
                     }
 
                     /* Add separator on hover after the 5th yield element */

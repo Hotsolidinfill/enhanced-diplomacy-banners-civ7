@@ -36,6 +36,8 @@
 					<Item>icons/emoji/neutral.png</Item>
 					<Item>icons/emoji/unfriendly.png</Item>
 					<Item>icons/emoji/war.png</Item>
+					<!-- add military power by Hotsolidinfill -->
+					<Item>icons//military_power.png</Item>
 				</ImportFiles>
 				<UIScripts>
 					<Item>ui/settings/settings.js</Item>

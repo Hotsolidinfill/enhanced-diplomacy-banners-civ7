@@ -10,5 +10,9 @@
 		<Row Tag="LOC_YIELD_POPULATION_TOTAL">
 			<Text>Population count.</Text>
 		</Row>
+		<!-- add military power by Hotsolidinfill -->
+		<Row Tag="LOC_YIELD_MILITARY_POWER">
+ 			<Text>Military Power</Text>
+ 		</Row>	
 	</EnglishText>
 </Database>

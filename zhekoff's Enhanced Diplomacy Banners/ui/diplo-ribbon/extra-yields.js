@@ -8,6 +8,8 @@ import DiploRibbonData, {
     RibbonDisplayType, 
     RibbonStatsToggleStatus 
 } from '/base-standard/ui/diplo-ribbon/model-diplo-ribbon.js';
+// add MilitaryPower by Hotsolidinfill
+import { calculateMilitaryPower } from './military-power.js';
 
 // Extend RibbonYieldType enum with additional yield types
 RibbonYieldType.TotalGold = "totalGold";
@@ -54,6 +56,9 @@ engine.whenReady.then(() => {
                 // Helper function to format yield value
                 const formatYieldValue = (value) => 
                     (value >= 0 ? "+" : "") + value.toFixed(1);
+
+                // add MilitaryPower by Hotsolidinfill
+                const strengthSum = calculateMilitaryPower(playerLibrary.Units.getUnits());
                 
                 const yieldData = [
                     {
@@ -135,6 +140,16 @@ engine.whenReady.then(() => {
                         details: "",
                         img: this.getImg('YIELD_DIPLOMACY', isLocal),
                         rawValue: totalDiplomacy,
+                        warningThreshold: Infinity
+                    },
+                    // add MilitaryPower by Hotsolidinfill
+                    {
+                        type: RibbonYieldType.MilitaryPower,
+                        label: Locale.compose("LOC_YIELD_MILITARY_POWER"),
+                        value: strengthSum.toString(),
+                        details: "",
+                        img: '<img src="icons/military_power.png">',
+                        rawValue: strengthSum,
                         warningThreshold: Infinity
                     }
                 ];
